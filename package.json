@@ -1,0 +1,52 @@
+{
+  "name": "@uni-helper/vite-plugins-monorepo",
+  "type": "module",
+  "version": "0.0.0",
+  "private": "true",
+  "description": "uni-helper vite plugins for monorepo",
+  "author": "Uni-Helper Team <https://github.com/uni-helper>",
+  "license": "MIT",
+  "homepage": "https://github.com/uni-helper/vite-plugins#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uni-helper/vite-plugins.git"
+  },
+  "bugs": "https://github.com/uni-helper/vite-plugins/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "pnpm stub",
+    "build": "rimraf --glob packages/*/dist && pnpm -r --filter=./packages/* run build && pnpm -r run build-post",
+    "stub": "pnpm -r --filter=./packages/* --parallel run stub",
+    "release": "bumpp package.json packages/**/package.json",
+    "lint": "eslint .",
+    "lint:fix": "nr lint --fix",
+    "test": "vitest",
+    "test:update": "vitest -u"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.39.1",
+    "@types/node": "^20.2.3",
+    "bumpp": "^9.1.0",
+    "eslint": "^8.41.0",
+    "esno": "^0.16.3",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.0.4",
+    "unbuild": "^1.2.1",
+    "vite": "^4.3.8",
+    "vitest": "^0.31.1"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@uni-helper/vite-plugin-uni-pages",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Uni-Helper Team <https://github.com/uni-helper>",
+  "license": "MIT",
+  "homepage": "https://github.com/uni-helper/vite-plugins/tree/main/packages/uni-pages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uni-helper/vite-plugins.git",
+    "directory": "packages/uni-pages"
+  },
+  "bugs": "https://github.com/uni-helper/vite-plugins/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "main": "src/index.ts",
+  "publishConfig": {
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "stub": "unbuild --stub"
+  },
+  "dependencies": {}
+}
