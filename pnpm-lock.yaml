@@ -37,6 +37,12 @@ importers:
 
   packages/uni-pages: {}
 
+  packages/vite-plugins:
+    dependencies:
+      '@uni-helper/vite-plugin-uni-pages':
+        specifier: workspace:*
+        version: link:../uni-pages
+
 packages:
 
   /@ampproject/remapping@2.2.0:
@@ -142,15 +148,6 @@ packages:
       - supports-color
       - typescript
     dev: true
-
-  /@babel/code-frame@7.18.6:
-    resolution: {integrity: sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q==}
-    engines: {node: '>=6.9.0'}
-    requiresBuild: true
-    dependencies:
-      '@babel/highlight': 7.18.6
-    dev: true
-    optional: true
 
   /@babel/code-frame@7.21.4:
     resolution: {integrity: sha512-LYvhNKfwWSPpocw8GI7gpK2nq3HSDuEPC/uSYaALSJu9xjsalaaYFOq0Pwt5KmVqwEbZlDu81aLXwBOmD/Fv9g==}
@@ -3815,7 +3812,7 @@ packages:
       rollup: 3.23.0
       typescript: 5.0.4
     optionalDependencies:
-      '@babel/code-frame': 7.18.6
+      '@babel/code-frame': 7.21.4
     dev: true
 
   /rollup@3.23.0:

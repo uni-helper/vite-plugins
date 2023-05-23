@@ -19,6 +19,11 @@
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
     },
+    "./uni-pages": {
+      "types": "./dist/uni-pages.d.ts",
+      "require": "./dist/uni-pages.cjs",
+      "import": "./dist/uni-pages.mjs"
+    },
     "./*": "./*"
   },
   "main": "src/index.ts",
@@ -34,5 +39,7 @@
     "build": "unbuild",
     "stub": "unbuild --stub"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@uni-helper/vite-plugin-uni-pages": "workspace:*"
+  }
 }
