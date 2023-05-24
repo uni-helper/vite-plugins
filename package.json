@@ -40,6 +40,9 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.1",
     "@types/node": "^20.2.3",
+    "@uni-helper/vite-plugin-uni-pages": "workspace:*",
+    "@uni-helper/vite-plugin-uni-router": "workspace:*",
+    "@uni-helper/vite-plugin-uni-utils": "workspace:*",
     "bumpp": "^9.1.0",
     "eslint": "^8.41.0",
     "esno": "^0.16.3",

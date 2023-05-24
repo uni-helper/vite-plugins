@@ -1,14 +1,15 @@
 {
-  "name": "@uni-helper/vite-plugins",
+  "name": "@uni-helper/vite-plugin-uni-utils",
   "type": "module",
   "version": "0.0.0",
   "description": "",
   "author": "Uni-Helper Team <https://github.com/uni-helper>",
   "license": "MIT",
-  "homepage": "https://github.com/uni-helper/vite-plugins#readme",
+  "homepage": "https://github.com/uni-helper/vite-plugins/tree/main/packages/uni-utils#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uni-helper/vite-plugins.git"
+    "url": "git+https://github.com/uni-helper/vite-plugins.git",
+    "directory": "packages/uni-utils"
   },
   "bugs": "https://github.com/uni-helper/vite-plugins/issues",
   "keywords": [],
@@ -18,11 +19,6 @@
       "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
-    },
-    "./uni-pages": {
-      "types": "./dist/uni-pages.d.ts",
-      "require": "./dist/uni-pages.cjs",
-      "import": "./dist/uni-pages.mjs"
     },
     "./*": "./*"
   },
@@ -40,8 +36,6 @@
     "stub": "unbuild --stub"
   },
   "dependencies": {
-    "@uni-helper/vite-plugin-uni-pages": "workspace:*",
-    "@uni-helper/vite-plugin-uni-utils": "workspace:^",
     "fast-glob": "^3.2.12"
   }
 }
