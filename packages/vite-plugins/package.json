@@ -41,7 +41,6 @@
   },
   "dependencies": {
     "@uni-helper/vite-plugin-uni-pages": "workspace:*",
-    "@uni-helper/vite-plugin-uni-utils": "workspace:^",
-    "fast-glob": "^3.2.12"
+    "@uni-helper/vite-plugin-uni-utils": "workspace:*"
   }
 }
