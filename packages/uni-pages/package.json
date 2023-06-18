@@ -29,7 +29,8 @@
     "types": "./dist/index.d.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "client.d.ts"
   ],
   "scripts": {
     "build": "unbuild",
