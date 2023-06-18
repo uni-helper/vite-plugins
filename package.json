@@ -41,6 +41,9 @@
     "play:mp-weixin": "npm -C playground run dev:mp-weixin",
     "build:mp-weixin": "pnpm build && npm -C playground run build:mp-weixin"
   },
+  "dependencies": {
+    "unconfig": "^0.3.9"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.5",
     "@types/node": "^20.3.1",

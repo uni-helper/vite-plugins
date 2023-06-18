@@ -34,5 +34,16 @@
   "scripts": {
     "build": "unbuild",
     "stub": "unbuild --stub"
+  },
+  "dependencies": {
+    "@uni-helper/uni-env": "^0.0.3",
+    "@uni-helper/vite-plugin-uni-utils": "workspace:*",
+    "@vue/compiler-sfc": "^3.3.4",
+    "chokidar": "^3.5.3",
+    "debug": "^4.3.4",
+    "json5": "^2.2.3",
+    "lodash-unified": "^1.0.3",
+    "magic-string": "^0.30.0",
+    "yaml": "^2.3.1"
   }
 }
