@@ -1,27 +1,26 @@
 import { join } from 'node:path'
-import { spawn } from 'node:child_process'
 import chokidar from 'chokidar'
-import { type Plugin, createLogger } from 'vite'
+import { type Plugin, createLogger, normalizePath } from 'vite'
 import MagicString from 'magic-string'
-import { checkJSONFileExist } from '@uni-helper/vite-plugin-uni-utils'
+import { checkJSONFileExist, restart } from '@uni-helper/vite-plugin-uni-utils'
 import type { UniPagesOptions } from './types'
 import { PageContext } from './context'
 import { MODULE_ID_VIRTUAL, OUTPUT_NAME, RESOLVED_MODULE_ID_VIRTUAL } from './constants'
 
 export * from './config'
 
-export function VitePluginUniPages(options: UniPagesOptions = {}): Plugin {
+export function VitePluginUniPages(userOptions: UniPagesOptions = {}): Plugin {
   let ctx: PageContext
 
   // check if pages.json exists in src folder, if not, create it
-  const resolvedPagesJSONPath = join(process.cwd(), options.outDir ?? 'src', OUTPUT_NAME)
+  const resolvedPagesJSONPath = normalizePath(join(process.cwd(), 'src', OUTPUT_NAME))
   const isValidated = checkJSONFileExist(resolvedPagesJSONPath, JSON.stringify({ pages: [{ path: '' }] }, null, 2))
 
   return {
     name: 'vite-plugin-uni-pages',
     enforce: 'pre',
     async configResolved(config) {
-      ctx = new PageContext(options, config.root)
+      ctx = new PageContext(userOptions, config.root)
       const logger = createLogger(undefined, {
         prefix: '[vite-plugin-uni-pages]',
       })
@@ -71,18 +70,3 @@ export function VitePluginUniPages(options: UniPagesOptions = {}): Plugin {
 }
 
 export { VitePluginUniPages as UniPages }
-
-async function restart() {
-  return new Promise((resolve) => {
-    const build = spawn(process.argv.shift()!, process.argv, {
-      cwd: process.cwd(),
-      detached: true,
-      env: process.env,
-    })
-    build.stdout?.pipe(process.stdout)
-    build.stderr?.pipe(process.stderr)
-    build.on('close', (code) => {
-      resolve(process.exit(code!))
-    })
-  })
-}
