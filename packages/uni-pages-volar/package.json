@@ -1,0 +1,45 @@
+{
+  "name": "@uni-helper/volar-service-uni-pages",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Uni-Helper Team <https://github.com/uni-helper>",
+  "license": "MIT",
+  "homepage": "https://github.com/uni-helper/vite-plugins/tree/main/packages/uni-pages-volar#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uni-helper/vite-plugins.git",
+    "directory": "packages/uni-pages-volar"
+  },
+  "bugs": "https://github.com/uni-helper/vite-plugins/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "main": "src/index.ts",
+  "publishConfig": {
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "stub": "unbuild --stub"
+  },
+  "dependencies": {
+    "vscode-json-languageservice": "^5.3.5"
+  },
+  "devDependencies": {
+    "@uni-helper/vite-plugin-uni-pages": "workspace:*",
+    "@volar/language-service": "1.6.9"
+  }
+}
