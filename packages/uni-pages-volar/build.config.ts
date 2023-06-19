@@ -10,5 +10,5 @@ export default defineBuildConfig({
     emitCJS: true,
     inlineDependencies: true,
   },
-  externals: ['vite'],
+  externals: ['@volar/language-service'],
 })
