@@ -54,10 +54,6 @@ export class ManifestContext {
   async setupWatcher(watcher: FSWatcher) {
     const configPath = resolveConfigFile(CONFIG_FILE_GLOB)
     watcher.add(configPath)
-
-    watcher.on('change', async (path) => {
-      await this.updateManifestJSON()
-    })
   }
 
   setLogger(logger: Logger) {
