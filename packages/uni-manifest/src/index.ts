@@ -27,7 +27,7 @@ export function VitePluginUniManifest(userOptions: UniManifestOptions = {}): Plu
 
       if (config.command === 'build') {
         if (!isValidated) {
-          ctx.logger?.warn('In build mode, if `manifest.json` does not exist, the plugin cannot create the complete `pages.json` before the uni-app, so it restarts the build.', {
+          ctx.logger?.warn('In build mode, if `manifest.json` does not exist, the plugin cannot create the complete `manifest.json` before the uni-app, so it restarts the build.', {
             timestamp: true,
           })
           await restart()
