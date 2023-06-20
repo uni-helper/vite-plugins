@@ -119,6 +119,8 @@ importers:
 
   packages/uni-router: {}
 
+  packages/uni-test: {}
+
   packages/uni-utils:
     dependencies:
       debug:
@@ -207,6 +209,9 @@ importers:
       '@dcloudio/vite-plugin-uni':
         specifier: 3.0.0-alpha-3080520230616001
         version: 3.0.0-alpha-3080520230616001(postcss@8.4.23)(vite@4.3.9)(vue@3.3.4)
+      '@uni-helper/vite-plugin-uni-test':
+        specifier: workspace:*
+        version: link:../packages/uni-test
       '@uni-helper/vite-plugins':
         specifier: workspace:*
         version: link:../packages/vite-plugins
