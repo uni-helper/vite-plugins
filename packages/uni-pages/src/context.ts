@@ -6,7 +6,7 @@ import { resolveConfigFile, writeFile } from '@uni-helper/vite-plugin-uni-utils'
 import type { PagesConfig } from './config/types'
 import type { PageMeta, PagePath, ResolvedOptions, SubPageMeta, UniPagesOptions } from './types'
 import { resolveOptions } from './options'
-import { CONFIG_FILE_GLOB, OUTPUT_NAME } from './constants'
+import { CONFIG_FILE_GLOB, CONFIG_FILE_NAME, OUTPUT_NAME } from './constants'
 import { getPagesPath, isConfigFile, isTargetFile, mergePageMetaDataArray } from './utils'
 import { getRouteBlock } from './customBlock'
 
@@ -26,10 +26,10 @@ export class PageContext {
   options: ResolvedOptions
   logger?: Logger
 
-  constructor(UniPagesOptions: UniPagesOptions, viteRoot: string = process.cwd()) {
-    this.rawOptions = UniPagesOptions
-    this.options = resolveOptions(UniPagesOptions, viteRoot)
-    this.resolvedPagesJSONPath = join(viteRoot, this.options.outDir, OUTPUT_NAME)
+  constructor(userOptions: UniPagesOptions, viteRoot: string = process.cwd()) {
+    this.rawOptions = userOptions
+    this.options = resolveOptions(userOptions, viteRoot)
+    this.resolvedPagesJSONPath = normalizePath(join(viteRoot, this.options.outDir, OUTPUT_NAME))
   }
 
   setupViteServer(server: ViteDevServer) {
@@ -64,7 +64,7 @@ export class PageContext {
   }
 
   async loadPagesConfig() {
-    const { config } = await loadConfig<PagesConfig>({ sources: [{ files: 'pages.config' }] })
+    const { config } = await loadConfig<PagesConfig>({ sources: [{ files: CONFIG_FILE_NAME }] })
     if (!config) {
       this.logger?.warn('Can\'t found pages.config, please create pages.config.(ts|mts|cts|js|cjs|mjs|json)')
       process.exit(-1)

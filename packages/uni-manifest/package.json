@@ -1,14 +1,15 @@
 {
-  "name": "@uni-helper/vite-plugins",
+  "name": "@uni-helper/vite-plugin-uni-manifest",
   "type": "module",
   "version": "0.0.0",
   "description": "",
   "author": "Uni-Helper Team <https://github.com/uni-helper>",
   "license": "MIT",
-  "homepage": "https://github.com/uni-helper/vite-plugins#readme",
+  "homepage": "https://github.com/uni-helper/vite-plugins/tree/main/packages/uni-manifest#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uni-helper/vite-plugins.git"
+    "url": "git+https://github.com/uni-helper/vite-plugins.git",
+    "directory": "packages/uni-manifest"
   },
   "bugs": "https://github.com/uni-helper/vite-plugins/issues",
   "keywords": [],
@@ -18,18 +19,7 @@
       "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
-    },
-    "./uni-pages": {
-      "types": "./dist/uni-pages.d.ts",
-      "require": "./dist/uni-pages.cjs",
-      "import": "./dist/uni-pages.mjs"
-    },
-    "./uni-manifest": {
-      "types": "./dist/uni-manifest.d.ts",
-      "require": "./dist/uni-manifest.cjs",
-      "import": "./dist/uni-manifest.mjs"
-    },
-    "./*": "./*"
+    }
   },
   "main": "src/index.ts",
   "publishConfig": {
@@ -45,8 +35,10 @@
     "stub": "unbuild --stub"
   },
   "dependencies": {
-    "@uni-helper/vite-plugin-uni-manifest": "workspace:*",
-    "@uni-helper/vite-plugin-uni-pages": "workspace:*",
+    "chokidar": "^3.5.3",
+    "type-fest": "^3.12.0"
+  },
+  "devDependencies": {
     "@uni-helper/vite-plugin-uni-utils": "workspace:*"
   }
 }

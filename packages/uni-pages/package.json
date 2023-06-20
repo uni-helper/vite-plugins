@@ -2,7 +2,7 @@
   "name": "@uni-helper/vite-plugin-uni-pages",
   "type": "module",
   "version": "0.0.0",
-  "description": "",
+  "description": "File system based routing for uni-app applications using Vite",
   "author": "Uni-Helper Team <https://github.com/uni-helper>",
   "license": "MIT",
   "homepage": "https://github.com/uni-helper/vite-plugins/tree/main/packages/uni-pages#readme",
@@ -36,7 +36,8 @@
   "scripts": {
     "build": "unbuild && pnpm generate",
     "stub": "unbuild --stub",
-    "generate": "ts-json-schema-generator -p \"./src/config/types/index.ts\" -t \"PagesConfig\" -o \"schema.json\" --no-type-check"
+    "generate": "ts-json-schema-generator -p \"./src/config/types/index.ts\" -t \"PagesConfig\" -o \"schema.json\" --no-type-check",
+    "prepublishOnly": "pnpm generate"
   },
   "dependencies": {
     "@uni-helper/uni-env": "^0.0.3",
@@ -47,7 +48,7 @@
     "json5": "^2.2.3",
     "lodash-unified": "^1.0.3",
     "magic-string": "^0.30.0",
-    "yaml": "^2.3.1",
-    "ts-json-schema-generator": "^1.2.0"
+    "ts-json-schema-generator": "^1.2.0",
+    "yaml": "^2.3.1"
   }
 }

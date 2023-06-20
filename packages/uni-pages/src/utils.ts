@@ -2,7 +2,7 @@ import { join, relative } from 'node:path'
 import type { ModuleNode, ViteDevServer } from 'vite'
 import { groupBy } from 'lodash-unified'
 import { scanFiles } from '@uni-helper/vite-plugin-uni-utils'
-import { FILE_EXTENSIONS, RESOLVED_MODULE_ID_VIRTUAL } from './constants'
+import { CONFIG_FILE_NAME, FILE_EXTENSIONS, RESOLVED_MODULE_ID_VIRTUAL } from './constants'
 import type { PageMeta, ResolvedOptions } from './types'
 
 export function invalidatePagesModule(server: ViteDevServer) {
@@ -43,7 +43,7 @@ export function isTargetFile(path: string) {
 }
 
 export function isConfigFile(path: string) {
-  return path.includes('pages.config')
+  return path.includes(CONFIG_FILE_NAME)
 }
 
 /**

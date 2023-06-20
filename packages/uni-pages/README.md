@@ -81,52 +81,59 @@ console.log(pages)
 ```ts
 export interface Options {
   /**
-   * 设置默认路由入口
-   * @default 'pages/index' || 'pages/index/index'
+   * The default application entry page is the home page
+   * @default 'pages/index' or 'pages/index/index'
    */
   homePage: string
 
   /**
-   * 是否扫描并合并 pages.json 中 pages 字段
+   * Whether to merge pages in pages.json
    * @default true
    */
   mergePages: boolean
 
   /**
-   * 扫描的目录
+   * Paths to the directory to search for page components.
    * @default ['src/pages']
    */
   dirs: string[]
 
   /**
-   * subPackages 扫描的目录，例如：src/pages-sub
+   * all root directories loaded by subPackages
+   * @default []
    */
   subPackages: string[]
 
   /**
-   * 输出 pages.json 目录
+   * pages.json dir
    * @default "src"
    */
   outDir: string
 
   /**
-   * 排除的页面
+   * exclude page
    * @default []
    */
   exclude: string[]
 
   /**
-   * 自定义块语言
+   * Set the default route block parser, or use `<route lang="xxx">` in SFC route block
    * @default 'json5'
    */
   routeBlockLang: 'json5' | 'json' | 'yaml' | 'yml'
 
-  onBeforeLoadUserConfig: (ctx: PageContext) => void
-  onAfterLoadUserConfig: (ctx: PageContext) => void
+  /**
+   * minify the `pages.json`
+   * @default false
+   */
+  minify: boolean
+
+  onBeforeLoadConfig: (ctx: PageContext) => void
+  onAfterLoadConfig: (ctx: PageContext) => void
   onBeforeScanPages: (ctx: PageContext) => void
   onAfterScanPages: (ctx: PageContext) => void
-  onBeforeMergePageMetaData: (ctx: PageContext) => void
-  onAfterMergePageMetaData: (ctx: PageContext) => void
+  onBeforeMergePagesData: (ctx: PageContext) => void
+  onAfterMergePagesData: (ctx: PageContext) => void
   onBeforeWriteFile: (ctx: PageContext) => void
   onAfterWriteFile: (ctx: PageContext) => void
 }

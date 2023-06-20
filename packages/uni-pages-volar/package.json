@@ -40,6 +40,6 @@
   },
   "devDependencies": {
     "@uni-helper/vite-plugin-uni-pages": "workspace:*",
-    "@volar/language-service": "1.6.9"
+    "@volar/language-service": "1.7.7"
   }
 }
