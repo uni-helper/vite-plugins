@@ -1,4 +1,5 @@
 import { basename, extname, join, relative } from 'node:path'
+import process from 'node:process'
 import type { FSWatcher } from 'chokidar'
 import { type Logger, type ViteDevServer, normalizePath } from 'vite'
 import { loadConfig } from 'unconfig'

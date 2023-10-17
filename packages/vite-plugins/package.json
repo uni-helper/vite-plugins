@@ -16,18 +16,18 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./uni-pages": {
       "types": "./dist/uni-pages.d.ts",
-      "require": "./dist/uni-pages.cjs",
-      "import": "./dist/uni-pages.mjs"
+      "import": "./dist/uni-pages.mjs",
+      "require": "./dist/uni-pages.cjs"
     },
     "./uni-manifest": {
       "types": "./dist/uni-manifest.d.ts",
-      "require": "./dist/uni-manifest.cjs",
-      "import": "./dist/uni-manifest.mjs"
+      "import": "./dist/uni-manifest.mjs",
+      "require": "./dist/uni-manifest.cjs"
     },
     "./*": "./*"
   },

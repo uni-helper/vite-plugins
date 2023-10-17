@@ -7,14 +7,12 @@ export function scanFiles(extensions: string[], options: FastGlobOptions = {}) {
 }
 
 export function scanDirs(dir: string | string[], options: FastGlobOptions = {}) {
-  return fg.sync(dir,
-    {
-      onlyDirectories: true,
-      dot: true,
-      unique: true,
-      ...options,
-    },
-  )
+  return fg.sync(dir, {
+    onlyDirectories: true,
+    dot: true,
+    unique: true,
+    ...options,
+  })
 }
 
 export function resolveConfigFile(configFile: string | string[], options: FastGlobOptions = {}) {

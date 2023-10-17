@@ -1,4 +1,5 @@
 import { join } from 'node:path'
+import process from 'node:process'
 import chokidar from 'chokidar'
 import { type Plugin, createLogger, normalizePath } from 'vite'
 import MagicString from 'magic-string'

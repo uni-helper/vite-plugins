@@ -1,0 +1,89 @@
+{
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-helper",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "pages": [
+    {
+      "path": "pages/index",
+      "type": "home",
+      "middlewares": [
+        "auth",
+        "test"
+      ],
+      "style": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "uni-helper"
+      }
+    },
+    {
+      "path": "pages/A-top",
+      "type": "page",
+      "style": {}
+    },
+    {
+      "path": "pages/test-json",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "test json page"
+      },
+      "middlewares": [
+        "auth"
+      ]
+    },
+    {
+      "path": "pages/test-yaml",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "test yaml page"
+      },
+      "middlewares": [
+        "auth"
+      ]
+    },
+    {
+      "path": "pages/test",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "test page"
+      },
+      "middlewares": [
+        "auth"
+      ]
+    },
+    {
+      "path": "pages/blog/index",
+      "type": "page",
+      "style": {}
+    },
+    {
+      "path": "pages/blog/post",
+      "type": "page",
+      "style": {}
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "pages-sub",
+      "pages": [
+        {
+          "path": "index",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "test json sub page"
+          }
+        },
+        {
+          "path": "about\\index",
+          "type": "page"
+        },
+        {
+          "path": "about\\your",
+          "type": "page"
+        }
+      ]
+    }
+  ]
+}

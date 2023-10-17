@@ -1,4 +1,5 @@
 import { join } from 'node:path'
+import process from 'node:process'
 import { loadConfig } from 'unconfig'
 import { type Logger, type ViteDevServer, normalizePath } from 'vite'
 import { resolveConfigFile, writeFile } from '@uni-helper/vite-plugin-uni-utils'

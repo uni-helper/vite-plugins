@@ -17,8 +17,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./*": "./*"
   },
@@ -36,10 +36,10 @@
     "stub": "unbuild --stub"
   },
   "dependencies": {
-    "vscode-json-languageservice": "^5.3.5"
+    "vscode-json-languageservice": "^5.3.7"
   },
   "devDependencies": {
     "@uni-helper/vite-plugin-uni-pages": "workspace:*",
-    "@volar/language-service": "1.7.7"
+    "@volar/language-service": "1.10.4"
   }
 }

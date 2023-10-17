@@ -1,4 +1,5 @@
 import { join } from 'node:path'
+import process from 'node:process'
 import { describe, expect, it } from 'vitest'
 import { resolveConfigFile, scanDirs, scanFiles } from '@uni-helper/vite-plugin-uni-utils'
 
@@ -39,7 +40,7 @@ describe('display config file', () => {
     const files = resolveConfigFile('pages.config.(ts|mts|cts|js|cjs|mjs|json)', { cwd: join(process.cwd(), 'playground') })
     expect(files).toMatchInlineSnapshot(`
       [
-        "/Users/neil/i/uni-helper/vite-plugins/playground/pages.config.ts",
+        "C:/Users/neil/i/uni-helper/vite-plugins/playground/pages.config.ts",
       ]
     `)
   })

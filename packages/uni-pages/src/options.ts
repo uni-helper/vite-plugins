@@ -1,3 +1,4 @@
+import process from 'node:process'
 import type { ResolvedOptions, UniPagesOptions } from './types'
 
 export function resolveOptions(userOptions: UniPagesOptions, viteRoot?: string): ResolvedOptions {

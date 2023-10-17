@@ -17,8 +17,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./*": "./*"
   },
@@ -29,8 +29,8 @@
     "types": "./dist/index.d.ts"
   },
   "files": [
-    "dist",
     "client.d.ts",
+    "dist",
     "schema.json"
   ],
   "scripts": {
@@ -40,15 +40,15 @@
     "prepublishOnly": "pnpm generate"
   },
   "dependencies": {
-    "@uni-helper/uni-env": "^0.0.3",
+    "@uni-helper/uni-env": "^0.1.1",
     "@uni-helper/vite-plugin-uni-utils": "workspace:*",
     "@vue/compiler-sfc": "^3.3.4",
     "chokidar": "^3.5.3",
     "debug": "^4.3.4",
     "json5": "^2.2.3",
     "lodash-unified": "^1.0.3",
-    "magic-string": "^0.30.0",
-    "ts-json-schema-generator": "^1.2.0",
-    "yaml": "^2.3.1"
+    "magic-string": "^0.30.5",
+    "ts-json-schema-generator": "^1.4.0",
+    "yaml": "^2.3.3"
   }
 }

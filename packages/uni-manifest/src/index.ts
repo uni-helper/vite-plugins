@@ -1,4 +1,5 @@
 import { join } from 'node:path'
+import process from 'node:process'
 import { type Plugin, createLogger, normalizePath } from 'vite'
 import { checkJSONFileExist, restart } from '@uni-helper/vite-plugin-uni-utils'
 import type { UniManifestOptions } from './types'
